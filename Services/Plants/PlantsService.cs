@@ -9,6 +9,7 @@ using DataBase.Context;
 using Models.Plants;
 using Microsoft.EntityFrameworkCore;
 using Services.Plants.Requests;
+using Models.Dtos.Plants;
 
 namespace Services.Flowers
 {
@@ -20,23 +21,25 @@ namespace Services.Flowers
 			_context = context;
 		}
 		
-		public async Task<List<Plant>> Get()
+		public async Task<PlantDto> GetAsync(long id)
 		{
-			var plants = _context.Plants.ToList();
-            foreach (var item in plants)
-            {
-				var plant = new PlantRequest
-				{
-					Name = item.Name,
-					Price = item.Price,
-					Soil = item.Soil,
-					Description = item.Description,
-					WateringIntervalDay = item.IntervalWatering
-				};
-				plants.Add(plant.GetPlant());
-            }
-			await _context.SaveChangesAsync();
-            return plants;
+			var plant = await _context.Plants.FirstOrDefaultAsync(x => x.Id == id);
+			return new PlantDto(plant);
+		}
+
+		public async Task<List<PlantDto>> ListAsync(PlantListRequest plantListRequest)
+		{
+			var plants = _context.Plants;
+			if(plantListRequest.Price != null)
+			{
+				plants.Where(p => p.Price == plantListRequest.Price).OrderBy(p => p.Price);
+			}
+			if(plantListRequest.Name != null)
+			{
+				plants.Where(n => n.Name == plantListRequest.Name).OrderBy(n => n.Name);
+			}
+
+			return new List<PlantDto>(plants.Select(p => new PlantDto(p))).ToList();
 		}
 
 		public async Task<long> AddAsync(PlantRequest plantRequest)
@@ -55,14 +58,14 @@ namespace Services.Flowers
 			await _context.SaveChangesAsync();
 		}
 
-		public async Task<long> EditAsync(long id, PlantRequest plantRequest)
+		public async Task<PlantDto> EditAsync(EditPlantRequest editPlantRequest)
 		{
-			var plant = plantRequest.EditPlant();
-			plant = await _context.Plants.FirstOrDefaultAsync(x => x.Id == id);
+			var plant = editPlantRequest.EditPlant();
+			plant = await _context.Plants.FirstOrDefaultAsync(x => x.Id == editPlantRequest.Id);
 			if (plant != null)
-			_context.Update(plant);
+				plant.Update(editPlantRequest.EditPlant());
 			await _context.SaveChangesAsync();
-			return plant.Id;
+			return new PlantDto(plant);
 		}
 
 

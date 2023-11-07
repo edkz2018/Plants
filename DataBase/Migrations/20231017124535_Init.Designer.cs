@@ -4,6 +4,7 @@ using DataBase.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataBase.Migrations
 {
     [DbContext(typeof(DateBaseContext))]
-    partial class DateBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20231017124535_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,44 +52,6 @@ namespace DataBase.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Plants");
-                });
-
-            modelBuilder.Entity("Models.Plants.PlantsReplantingPlan", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("LastReplantingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("PlantId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlantsReplantingPlans");
-                });
-
-            modelBuilder.Entity("Models.Plants.PlantsWateringPlan", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("LastWateringDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("PlantId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PlantsWateringPlans");
                 });
 #pragma warning restore 612, 618
         }

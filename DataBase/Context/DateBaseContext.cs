@@ -12,10 +12,6 @@ namespace DataBase.Context
     {
         public DbSet<Plant> Plants { get; protected set; }
 
-        public DbSet<PlantsReplantingPlan> PlantsReplantingPlans { get; protected set; }
-
-        public DbSet<PlantsWateringPlan> PlantsWateringPlans { get; protected set; }
-
         public DateBaseContext(DbContextOptions<DateBaseContext> options)
           : base(options)
         {

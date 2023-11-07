@@ -9,11 +9,13 @@ namespace Services.Plants.Requests;
 
 public class PlantRequest
 {
+	public long Id { get; set; }
 	public string Name { get; init; }
 	public double? Price { get; init; } = 0;
 	public string? Soil { get; init; } = string.Empty;
 	public string? Description { get; init; } = string.Empty;
 	public int WateringIntervalDay {  get; init; }
+	public DateTime? LastWateringDay { get; init; }
 
 	public Plant CreatePlant() 
 	{ 
@@ -22,19 +24,11 @@ public class PlantRequest
 			Price,
 			Soil,
 			Description,
-			WateringIntervalDay
+			WateringIntervalDay,
+			LastWateringDay
 			);
 	}
-	public Plant GetPlant()
-	{
-		return new Plant(
-			Name,
-			Price,
-			Soil,
-			Description,
-			WateringIntervalDay
-			);
-	}
+	
 
 	public Plant EditPlant()
 	{
@@ -43,7 +37,8 @@ public class PlantRequest
 			Price,
 			Soil,
 			Description,
-			WateringIntervalDay
+			WateringIntervalDay,
+			LastWateringDay
 			);
 	}
 
