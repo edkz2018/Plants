@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Models": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Eduard\\source\\repos\\Plants",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Devolepment"
+      },
+      "remoteDebugEnabled": false
+    }
+  }
+}
