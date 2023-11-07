@@ -3680,24 +3680,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Eduard\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Biosing\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Plants\\Plants.csproj",
+      "projectUniqueName": "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Plants\\Plants.csproj",
       "projectName": "Plants",
-      "projectPath": "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Plants\\Plants.csproj",
-      "packagesPath": "C:\\Users\\Eduard\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Plants\\obj\\",
+      "projectPath": "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Plants\\Plants.csproj",
+      "packagesPath": "C:\\Users\\Biosing\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Plants\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Eduard\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Biosing\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3711,14 +3706,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\DataBase\\DataBase.csproj": {
-              "projectPath": "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\DataBase\\DataBase.csproj"
+            "C:\\Users\\Biosing\\Source\\Repos\\Plants\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\Users\\Biosing\\Source\\Repos\\Plants\\DataBase\\DataBase.csproj"
             },
-            "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Models\\Models.csproj"
+            "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Models\\Models.csproj"
             },
-            "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\Eduard\\source\\repos\\Git\\Plants\\Services\\Services.csproj"
+            "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Biosing\\Source\\Repos\\Plants\\Services\\Services.csproj"
             }
           }
         }
@@ -3783,7 +3778,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
