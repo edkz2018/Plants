@@ -9,7 +9,6 @@ namespace Services.Plants.Requests;
 
 public class PlantRequest
 {
-	public long Id { get; set; }
 	public string Name { get; init; }
 	public double? Price { get; init; } = 0;
 	public string? Soil { get; init; } = string.Empty;
